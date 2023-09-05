@@ -1,4 +1,4 @@
-# typing-speed-tester
+# typing-with-aman
 
 This is a website that allows you to test your typing speed and accuracy in different modes and time durations. You can choose from easy or hard mode, and set the time limit from 1 to 5 minutes. The website will generate random words for you to type, and show you your results at the end.
 
