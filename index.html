@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-------------------------------------------------
+       Title
+    -------------------------------------------------->
+    <title>Typing With Aman</title>
+
+
+    <!-------------------------------------------------
+       Link Favicon
+    -------------------------------------------------->
+    <link rel="icon" type="image/png" href="Assets/Images/logo-2.png">
+
+
+    <!---------------------------------------------------
+       Link External Custom Style Sheets
+    ----------------------------------------------------->
+    <link rel="stylesheet" href="Css/utils.css">
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/mediaQueries.css">
+
+
+</head>
+
+<body>
+
+    <!---------------------------------------------------
+       Wrapper Start
+    ----------------------------------------------------->
+    <div class="wrapper">
+
+        <!---------------------------------------------------
+           Nav Start
+        ----------------------------------------------------->
+        <nav class="max-width-center">
+
+            <!---------------------------------------------------
+                Logo Start
+            ----------------------------------------------------->
+            <div class="logo-box">
+                <img src="Assets/Images/logo-2.png" alt="logo">
+                <h2>Typing with aman</h2>
+            </div>
+
+
+            <!---------------------------------------------------
+                Nav Buttons Start
+            ----------------------------------------------------->
+            <div class="nav-buttons-box">
+                <button class="change-mode-btn easy-mode-btn active">Easy</button>
+                <button class="change-mode-btn hard-mode-btn">Hard</button>
+            </div>
+
+
+        </nav>
+        <!---------------------------------------------------
+           Nav End
+        ----------------------------------------------------->
+
+
+        <!---------------------------------------------------
+            Main Start
+        ----------------------------------------------------->
+        <main class="max-width-center">
+
+
+            <!---------------------------------------------------
+               Time Buttons Countdown Container Start
+            ----------------------------------------------------->
+            <div class="time-buttons-countdown-container">
+
+                <!---------------------------------------------------
+                   Time Buttons Start
+                ----------------------------------------------------->
+                <div class="time-buttons">
+                    <button class="time-btn active">
+                        <span>1</span> Minute Test
+                    </button>
+                    <button class="time-btn">
+                        <span>3</span>Minute Test
+                    </button>
+                    <button class="time-btn">
+                        <span>5</span>Minute Test
+                    </button>
+                </div>
+
+                <!---------------------------------------------------
+                   Countdown Boxes Start
+                ----------------------------------------------------->
+                <div>
+                    <h1 class="countdown-heading">⏳ Countdown ⏳</h1>
+                    <div class="countdown-boxes">
+                        <div class="countdown-box">
+                            <span>Minutes</span>
+                            <span id="minutes">01</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span>Seconds</span>
+                            <span id="seconds">00</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span>Millisec</span>
+                            <span id="milliseconds">00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!---------------------------------------------------
+               Time Buttons Countdown Container End
+            ----------------------------------------------------->
+
+
+            <!---------------------------------------------------
+               Test Paragraph Container Start
+            ----------------------------------------------------->
+            <div class="test-para-container">
+                <div class="test-para-box">
+                    <span>L</span>
+                    <span>o</span>
+                    <span>a</span>
+                    <span>d</span>
+                    <span>i</span>
+                    <span>n</span>
+                    <span>g</span>
+                    <span>.</span>
+                    <span>.</span>
+                    <span>.</span>
+                </div>
+            </div>
+            <!---------------------------------------------------
+               Test Paragraph Container End
+            ----------------------------------------------------->
+
+
+            <!---------------------------------------------------
+               Text Area Container Start
+            ----------------------------------------------------->
+            <div>
+                <h1 class="test-skill-heading">🙄 Test Your Typing 💻 Skills</h1>
+                <div class="textarea-container">
+                    <textarea id="user-input" rows="15" placeholder="Click here And Press Any Key to Start"></textarea>
+                </div>
+            </div>
+            <!---------------------------------------------------
+               Text Area Container End
+            ----------------------------------------------------->
+
+
+        </main>
+        <!---------------------------------------------------
+            Main End
+        ----------------------------------------------------->
+
+        <!---------------------------------------------------
+            Footer Start
+        ----------------------------------------------------->
+        <footer>
+            <p>Developed by Web With Aman aka Aman &copy; 2023</p>
+        </footer>
+        <!---------------------------------------------------
+            Footer End
+        ----------------------------------------------------->
+
+
+        <!---------------------------------------------------
+            Result Box Start
+        ----------------------------------------------------->
+        <div class="result-screen-overlay">
+            <div class="result-box">
+                <div class="result-left">
+                    <img src="Assets/Images/boy.png" alt="boy">
+                </div>
+                <div class="result-right">
+                    <h1>Your Test 💻 Analysis</h1>
+                    <ul>
+                        <li>
+                            <ul class="result-inner-list">
+                                <li>Test Duration</li>
+                                <li id="time-duration"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="result-inner-list">
+                                <li>Test Mode</li>
+                                <li id="test-mode"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="result-inner-list">
+                                <li>Words</li>
+                                <li id="wpm"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="result-inner-list">
+                                <li>Characters</li>
+                                <li id="cpm"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="result-inner-list">
+                                <li>Accuracy</li>
+                                <li id="accuracy"></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <span class="close-icon"><i class="fa fa-times"></i></span>
+
+            </div>
+        </div>
+        <!---------------------------------------------------
+            Result Box End
+        ----------------------------------------------------->
+
+        <!---------------------------------------------------
+             Audios Start
+        ----------------------------------------------------->
+        <audio class="keySound">
+            <source src="Assets/Sounds/correct.mp3" type="audio/mp3">
+            <source src="Assets/Sounds/correct.wav" type="audio/wav">
+            <source src="Assets/Sounds/correct.ogg" type="audio/ogg">
+        </audio>
+
+        <audio class="keySound">
+            <source src="Assets/Sounds/wrong.mp3" type="audio/mp3">
+            <source src="Assets/Sounds/wrong.wav" type="audio/wav">
+            <source src="Assets/Sounds/wrong.ogg" type="audio/ogg">
+        </audio>
+        <!---------------------------------------------------
+           Audios End
+        ----------------------------------------------------->
+
+    </div>
+    <!---------------------------------------------------
+       Wrapper End
+   ----------------------------------------------------->
+
+
+    <!--------------------------------------------------------------------------------
+       Javascript Cdns And Files For Icons And Other Sources And External Custom Js Files
+   ---------------------------------------------------------------------------------->
+
+
+    <!---------------------------------------------------
+       Link External Custom Js Files
+   ----------------------------------------------------->
+    <script src="Js/script.js"></script>
+
+
+    <!---------------------------------------------------
+       Font Awesome Cdn For Icons
+   ----------------------------------------------------->
+    <script src="https://kit.fontawesome.com/2bcb8da7fa.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

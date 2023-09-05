@@ -1,0 +1,540 @@
+/**********************************************************
+  Add Google Fonts
+**********************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@300;400;500;600;700;800');
+
+
+/**********************************************************
+  Reset Default Properties Start
+**********************************************************/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* Now 1rem = 1em = 10px */
+
+    overflow-x: hidden;
+}
+
+/**********************************************************
+  Reset Default Properties End
+**********************************************************/
+
+
+/**********************************************************
+  Variables Start
+**********************************************************/
+:root {
+
+    /* Theme Colors */
+    --black: #000;
+    --white: #fff;
+    --main-bg: #f5f6fa;
+    --primary: #130f40;
+    --greyish: #80808085;
+
+
+    /* Theme Fonts */
+    --font-family-1: 'Lato', sans-serif;
+    --font-family-2: 'Poppins', sans-serif;
+}
+
+/**********************************************************
+  Variables End
+**********************************************************/
+
+
+/**********************************************************
+  Common Properties to Frequently Used Elements Start
+**********************************************************/
+body {
+
+    /* Following Properties Will be Inherited by All Elements */
+    text-transform: uppercase;
+}
+
+li {
+    list-style-type: none;
+    font-family: var(--font-family-2);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: var(--font-family-2);
+    transition: all .3s linear;
+}
+
+textarea {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    display: inline-block;
+    object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-1);
+    line-height: 1.4;
+}
+
+p {
+    font-family: var(--font-family-2);
+    line-height: 1.6;
+}
+
+/**********************************************************
+  Common Properties to Frequently Used Elements End
+**********************************************************/
+
+
+/***********************************************************************************************
+  Actual Document Styling Start
+***********************************************************************************************/
+
+
+/**********************************************************
+   Wrapper Start
+**********************************************************/
+.wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--main-bg);
+}
+
+/**********************************************************
+   Nav Start
+**********************************************************/
+nav {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: .1px solid var(--primary);
+}
+
+/**********************************************************
+   Logo Start
+**********************************************************/
+.logo-box {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.logo-box img {
+    height: 3.2rem;
+}
+
+.logo-box h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .8px;
+    word-spacing: .8px;
+}
+
+/**********************************************************
+   Nav Buttons Box Start
+**********************************************************/
+.nav-buttons-box {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    background-color: var(--white);
+}
+
+.nav-buttons-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: var(--primary);
+    z-index: -1;
+    transform-origin: left;
+    transform: perspective(300px) rotateY(var(--changeDeg, -180deg));
+    transition: all .5s linear;
+}
+
+.change-mode-btn {
+    padding: 1rem 2.5rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: transparent;
+}
+
+.change-mode-btn.active {
+    color: var(--white);
+    transition: all .1s linear .4s;
+}
+
+/**********************************************************
+   Nav End
+**********************************************************/
+
+
+
+/**********************************************************
+   Time Buttons Countdown Container Start
+**********************************************************/
+.time-buttons-countdown-container {
+    width: 100%;
+    padding-block: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/**********************************************************
+   Time Buttons Start
+**********************************************************/
+.time-buttons {
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px inset, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+}
+
+.time-btn {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border: .3rem solid var(--primary);
+    padding-right: 1rem;
+    background-color: transparent;
+    letter-spacing: .5px;
+    position: relative;
+    z-index: 1;
+}
+
+.time-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--primary);
+    z-index: -1;
+    transition: all .4s linear;
+}
+
+.time-btn span {
+    width: 4rem;
+    height: 4rem;
+    display: inline-grid;
+    place-items: center;
+    color: var(--white);
+    background-color: var(--primary);
+    transition: all .4s linear;
+    border-right: 0;
+}
+
+
+@media (hover:hover) {
+    .time-btn:hover::before {
+        width: 100%;
+    }
+
+    .time-btn:hover {
+        color: var(--white);
+    }
+
+    .time-btn:hover span {
+        border-right: .13rem solid var(--white);
+    }
+}
+
+.time-btn.active {
+    color: var(--white);
+}
+
+.time-btn.active span {
+    border-right: .13rem solid var(--white);
+}
+
+.time-btn.active::before {
+    width: 100%;
+}
+
+/**********************************************************
+   Time Buttons End
+**********************************************************/
+
+
+
+/**********************************************************
+    Countdown Boxes Start
+**********************************************************/
+.countdown-heading,
+.test-skill-heading {
+    color: var(--primary);
+    padding-block: 2rem;
+    text-align: center;
+    letter-spacing: .8px;
+    word-spacing: 3px;
+}
+
+.countdown-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.countdown-box {
+    text-align: center;
+    width: 6.5rem;
+    font-family: var(--font-family-2);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transform: translateY(0);
+    transition: all .3s linear;
+    cursor: pointer;
+}
+
+
+@media (hover:hover) {
+    .countdown-box:hover {
+        transform: translateY(-4px);
+    }
+}
+
+.countdown-box span:first-child {
+    padding: .5rem 1rem;
+    color: var(--white);
+    font-size: 1rem;
+    background-color: var(--greyish);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.countdown-box span:last-child {
+    padding-block: .5rem;
+    color: var(--greyish);
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/**********************************************************
+    Countdown Boxes End
+**********************************************************/
+
+
+/**********************************************************
+   Time Buttons Countdown Container End
+**********************************************************/
+
+
+/**********************************************************
+   Test Paragraph Container Start
+**********************************************************/
+.test-para-container {
+    margin-bottom: 3rem;
+    width: 100%;
+    background-color: var(--white);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px inset, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+}
+
+.test-para-box {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    width: fit-content;
+    padding: 2rem;
+    position: relative;
+    left: 50%;
+
+}
+
+.test-para-box span {
+    width: 2rem;
+    border-radius: 5px;
+    text-transform: initial;
+    text-align: center;
+    color: var(--greyish);
+    font-size: 2rem;
+    font-family: var(--font-family-2);
+    user-select: none;
+}
+
+/**********************************************************
+   Test Paragraph Container End
+**********************************************************/
+
+
+/**********************************************************
+   Text Area Container Start
+**********************************************************/
+.textarea-container {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2rem;
+}
+
+#user-input {
+    width: 100%;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    border: 0;
+    resize: none;
+    color: var(--black);
+}
+
+#user-input::placeholder {
+    color: var(--greyish);
+}
+
+/**********************************************************
+   Text Area Container End
+**********************************************************/
+
+
+/**********************************************************
+   Footer Start
+**********************************************************/
+footer {
+    padding: 2rem;
+    margin-top: 5rem;
+    color: var(--white);
+    letter-spacing: .8px;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: var(--primary);
+}
+
+/**********************************************************
+   Footer End
+**********************************************************/
+
+
+
+/**********************************************************
+   Result box Start
+**********************************************************/
+.result-loader {
+    width: 6rem;
+    height: 6rem;
+    border: 5px solid var(--white);
+    border-left-color: transparent;
+    border-radius: 50%;
+    animation: animate-loader 1s linear infinite;
+}
+
+@keyframes animate-loader {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.result-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(14, 14, 54, 0.425);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    place-items: center;
+}
+
+.result-box {
+    max-width: 700px;
+    width: 80%;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    display: flex;
+    position: relative;
+}
+
+.result-box .close-icon {
+    width: 3rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.8rem;
+    background-color: var(--primary);
+    color: var(--white);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+}
+
+.result-box .result-left,
+.result-box .result-right {
+    flex: 1;
+}
+
+.result-left img {
+    width: 100%;
+}
+
+.result-right h1 {
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin-block: 3rem;
+    word-spacing: .5px;
+}
+
+.result-right .result-inner-list {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transform: translateX(0);
+    transition: all .3s linear;
+}
+
+@media (hover:hover) {
+    .result-right .result-inner-list:hover {
+        transform: translateX(-10px);
+    }
+}
+
+.result-right .result-inner-list li:first-child {
+    width: 15rem;
+    color: var(--black);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.result-right .result-inner-list li:last-child {
+    color: var(--greyish);
+    font-size: 1.4rem;
+    letter-spacing: .5px;
+}
+
+/**********************************************************
+   Result box End
+**********************************************************/
